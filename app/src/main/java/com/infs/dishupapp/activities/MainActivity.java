@@ -1,8 +1,10 @@
-package com.infs.dishupapp;
+package com.infs.dishupapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.infs.dishupapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
