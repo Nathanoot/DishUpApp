@@ -54,9 +54,10 @@ public class RecipeListFragment extends Fragment {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
+        final CategoryFragment categoryFragment= new CategoryFragment();
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + CategoryFragment.getCategory();
+        String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + categoryFragment.getCategory();
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
