@@ -1,25 +1,28 @@
 package com.infs.dishupapp.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.infs.dishupapp.R;
-import com.infs.dishupapp.activities.MainActivity;
+import com.infs.dishupapp.adapters.CategoryListAdapter;
+import com.infs.dishupapp.models.CategoryItem;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class CategoryFragment extends Fragment {
 
@@ -56,7 +59,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Beef";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -64,7 +67,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Breakfast";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -72,7 +75,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Chicken";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -80,7 +83,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Dessert";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -88,7 +91,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Pork";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -96,7 +99,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Seafood";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -104,14 +107,14 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Vegan";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
         vegetarianButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 category = "Vegetarian";
-                newCategoryItemActivity();
+                RecipeListFragment.newCategoryItemActivity();
             }
         });
 
@@ -119,24 +122,9 @@ public class CategoryFragment extends Fragment {
 
       }
 
-
-
-
-      public void newCategoryItemActivity() {
-
-          Fragment fragment = new RecipeListFragment();
-          FragmentManager fragmentManager = getFragmentManager();
-          FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-          fragmentTransaction.replace(R.id.fragment_container, fragment);
-          fragmentTransaction.commit();
-
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + category;
-        System.out.println(category);
-        
-
-//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
-//      }
+    public String getCategory() {
+        return category;
+    }
 
     }
-}
+
