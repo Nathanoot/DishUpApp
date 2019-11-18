@@ -7,22 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 import com.infs.dishupapp.R;
-import com.infs.dishupapp.adapters.CategoryListAdapter;
-import com.infs.dishupapp.models.CategoryItem;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class CategoryFragment extends Fragment {
 
@@ -54,12 +40,14 @@ public class CategoryFragment extends Fragment {
         veganButton = view.findViewById(R.id.imageButton7);
         vegetarianButton = view.findViewById(R.id.imageButton8);
 
+        final RecipeListFragment recipe = new RecipeListFragment();
+
 
         beefButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 category = "Beef";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
@@ -67,7 +55,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Breakfast";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
@@ -75,7 +63,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Chicken";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
@@ -83,7 +71,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Dessert";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
@@ -91,7 +79,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Pork";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
@@ -99,7 +87,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Seafood";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
@@ -107,14 +95,14 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 category = "Vegan";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
         vegetarianButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 category = "Vegetarian";
-                RecipeListFragment.newCategoryItemActivity();
+                recipe.newCategoryItemActivity();
             }
         });
 
