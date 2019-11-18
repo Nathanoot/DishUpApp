@@ -39,8 +39,6 @@ public class CategoryFragment extends Fragment {
         seafoodButton = view.findViewById(R.id.imageButton6);
         veganButton = view.findViewById(R.id.imageButton7);
         vegetarianButton = view.findViewById(R.id.imageButton8);
-        final RecipeListFragment recipe= new RecipeListFragment();
-
         final RecipeListFragment recipe = new RecipeListFragment();
 
 
