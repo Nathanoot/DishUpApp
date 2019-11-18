@@ -1,12 +1,15 @@
 package com.infs.dishupapp.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -29,6 +32,7 @@ public class CategoryFragment extends Fragment {
     public Button veganButton;
     public Button vegetarianButton;
     public String category;
+
 
     public CategoryFragment() {
 
@@ -119,13 +123,20 @@ public class CategoryFragment extends Fragment {
 
 
       public void newCategoryItemActivity() {
+
+          Fragment fragment = new RecipeListFragment();
+          FragmentManager fragmentManager = getFragmentManager();
+          FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+          fragmentTransaction.replace(R.id.fragment_container, fragment);
+          fragmentTransaction.commit();
+
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + category;
         System.out.println(category);
         
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
-      }
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
+//      }
 
     }
 }
