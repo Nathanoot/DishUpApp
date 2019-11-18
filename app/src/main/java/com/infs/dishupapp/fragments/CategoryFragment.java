@@ -1,5 +1,4 @@
 package com.infs.dishupapp.fragments;
 
-public class categoryRecyclerView {
-
+public class CategoryFragment {
 }
