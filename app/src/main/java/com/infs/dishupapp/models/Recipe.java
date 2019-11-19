@@ -2,7 +2,7 @@ package com.infs.dishupapp.models;
 
 public class Recipe {
 
-    private String idMeal;
+    private int idMeal;
     private String strMeal;
     private String strCategory;
     private String strInstructions;
@@ -11,7 +11,6 @@ public class Recipe {
     private String strMealThumb;
     //YouTube Video
     private String strYoutube;
-    //there are 15 possible ingredients for this API
     private String strIngredient1;
     private String strIngredient2;
     private String strIngredient3;
@@ -20,13 +19,7 @@ public class Recipe {
     private String strIngredient6;
     private String strIngredient7;
     private String strIngredient8;
-    private String strIngredient9;
-    private String strIngredient10;
-    private String strIngredient11;
-    private String strIngredient12;
-    private String strIngredient13;
-    private String strIngredient14;
-    private String strIngredient15;
+
     //There are 20 different measures
     private String strMeasure1;
     private String strMeasure2;
@@ -36,20 +29,9 @@ public class Recipe {
     private String strMeasure6;
     private String strMeasure7;
     private String strMeasure8;
-    private String strMeasure9;
-    private String strMeasure10;
-    private String strMeasure11;
-    private String strMeasure12;
-    private String strMeasure13;
-    private String strMeasure14;
-    private String strMeasure15;
-    private String strMeasure16;
-    private String strMeasure17;
-    private String strMeasure18;
-    private String strMeasure19;
-    private String strMeasure20;
 
-    public String getIdMeal() {
+
+    public int getIdMeal() {
         return idMeal;
     }
 
@@ -109,34 +91,6 @@ public class Recipe {
         return strIngredient8;
     }
 
-    public String getStrIngredient9() {
-        return strIngredient9;
-    }
-
-    public String getStrIngredient10() {
-        return strIngredient10;
-    }
-
-    public String getStrIngredient11() {
-        return strIngredient11;
-    }
-
-    public String getStrIngredient12() {
-        return strIngredient12;
-    }
-
-    public String getStrIngredient13() {
-        return strIngredient13;
-    }
-
-    public String getStrIngredient14() {
-        return strIngredient14;
-    }
-
-    public String getStrIngredient15() {
-        return strIngredient15;
-    }
-
     public String getStrMeasure1() {
         return strMeasure1;
     }
@@ -167,53 +121,5 @@ public class Recipe {
 
     public String getStrMeasure8() {
         return strMeasure8;
-    }
-
-    public String getStrMeasure9() {
-        return strMeasure9;
-    }
-
-    public String getStrMeasure10() {
-        return strMeasure10;
-    }
-
-    public String getStrMeasure11() {
-        return strMeasure11;
-    }
-
-    public String getStrMeasure12() {
-        return strMeasure12;
-    }
-
-    public String getStrMeasure13() {
-        return strMeasure13;
-    }
-
-    public String getStrMeasure14() {
-        return strMeasure14;
-    }
-
-    public String getStrMeasure15() {
-        return strMeasure15;
-    }
-
-    public String getStrMeasure16() {
-        return strMeasure16;
-    }
-
-    public String getStrMeasure17() {
-        return strMeasure17;
-    }
-
-    public String getStrMeasure18() {
-        return strMeasure18;
-    }
-
-    public String getStrMeasure19() {
-        return strMeasure19;
-    }
-
-    public String getStrMeasure20() {
-        return strMeasure20;
     }
 }

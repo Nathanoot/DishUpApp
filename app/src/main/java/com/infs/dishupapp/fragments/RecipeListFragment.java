@@ -38,11 +38,11 @@ public class RecipeListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_recipe_list, container, false);
-        recyclerView = view.findViewById(R.id.rvSearch);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+    recyclerView = view.findViewById(R.id.rvSearch);
+    LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
         return view;
-    }
+}
 
 
     public void newCategoryItemActivity() {

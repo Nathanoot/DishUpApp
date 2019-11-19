@@ -1,5 +1,7 @@
 package com.infs.dishupapp.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.infs.dishupapp.R;
+import com.infs.dishupapp.activities.RecipeDetailActivity;
 import com.infs.dishupapp.models.CategoryItem;
 
 import java.util.List;
@@ -38,6 +41,17 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         final CategoryItem categoryItemAtPosition = categoryToAdapt.get(position);
 
         holder.nameTextView.setText(categoryItemAtPosition.getStrMeal());
+
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+
+                Intent intent = new Intent(context, RecipeDetailActivity.class);
+                intent.putExtra("idMeal", categoryItemAtPosition.getIdMeal());
+                context.startActivity(intent);
+            }
+        });
 
     }
 
