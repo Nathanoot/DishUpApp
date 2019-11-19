@@ -70,6 +70,7 @@ public class RecipeListFragment extends Fragment {
                         categoryListAdapter.setData(itemCategory);
                         recyclerView.setAdapter(categoryListAdapter);
                         //   FakeDatabase.saveArticlesToFakeDatabase(articleCat);
+
                         System.out.println("This is the OnResponse");
                     }
 
