@@ -53,6 +53,7 @@ public class RecipeListFragment extends Fragment {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
+
         final CategoryFragment categoryFragment = new CategoryFragment();
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
