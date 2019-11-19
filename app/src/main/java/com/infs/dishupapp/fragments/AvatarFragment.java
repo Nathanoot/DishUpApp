@@ -21,7 +21,8 @@ public class AvatarFragment extends Fragment {
 
     public AvatarFragment(){
     }
-    @NonNull
+
+
     @Override
     public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_avatar, container, false);
@@ -29,8 +30,9 @@ public class AvatarFragment extends Fragment {
         character= view.findViewById( R.id.imageAvatar);
         //setting up scoring system
         final Avatar avatar= new Avatar();
+
         if(avatar.getScore()<2){
-            character.setImageResource(@drawable/baby.png );
+            character.setImageResource(R.drawable.ic_launcher_background);
         }
 
 
