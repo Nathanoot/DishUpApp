@@ -85,7 +85,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 System.out.println("Error");
             }
             int clickcount=0;
-            @Override
+
+           public getClicks(){
+               @Override
             addToScore.OnClickListene(new View.OnClickListener(){
                 @Override
                         public void onClick(View view){
@@ -99,8 +101,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     }
 
                 }
-                }
-
+                });
+           }
 
         });
 
