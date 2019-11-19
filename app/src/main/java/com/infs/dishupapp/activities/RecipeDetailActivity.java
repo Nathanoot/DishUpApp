@@ -43,9 +43,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
         ingredientTwo = findViewById(R.id.ingredientTwo);
         ingredientThree = findViewById(R.id.ingredientThree);
         ingredientFour = findViewById(R.id.ingredientFour);
-        measureOne = findViewById(R.id.measureOne;
-        measureTwo = findViewById(R.id.measureTwo;
-        measureThree = findViewById(R.id.measureThree;
+        measureOne = findViewById(R.id.measureOne);
+        measureTwo = findViewById(R.id.measureTwo);
+        measureThree = findViewById(R.id.measureThree);
 
 
         Intent intent = getIntent();
@@ -72,7 +72,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
                         ingredientOne.setText(recipe.getStrMeasure2());
                         ingredientOne.setText(recipe.getStrMeasure3());
 
-                        
+
                     }
                 }, new Response.ErrorListener() {
             @Override
