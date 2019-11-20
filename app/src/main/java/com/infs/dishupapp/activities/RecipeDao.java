@@ -13,12 +13,12 @@ import java.util.List;
 public interface RecipeDao {
 
 //list all recipes from the API
-    @Query("SELECT * FROM meals")
+    @Query("SELECT * FROM recipe")
     List<Recipe> getAll();
 
     //finding recipes by ID?
-    @Query("SELECT * FROM meals WHERE idMeal = :idMeal")
-    Recipe findRecipeByidMeal(String idMeal);
+    @Query("SELECT * FROM recipe WHERE idMeal = :idMeal")
+    Recipe findRecipeByidMeal(int idMeal);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Recipe> recipes);

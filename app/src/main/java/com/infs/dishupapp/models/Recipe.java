@@ -1,8 +1,12 @@
 package com.infs.dishupapp.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+@Entity
 public class Recipe {
-
+@PrimaryKey
     private int idMeal;
+
     private String strMeal;
     private String strCategory;
     private String strInstructions;
