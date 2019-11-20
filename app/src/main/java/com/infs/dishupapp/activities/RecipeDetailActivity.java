@@ -2,10 +2,8 @@ package com.infs.dishupapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +15,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.infs.dishupapp.R;
-import com.infs.dishupapp.models.Avatar;
 import com.infs.dishupapp.models.Recipe;
 
 public class RecipeDetailActivity extends AppCompatActivity {
@@ -52,13 +49,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
         measureThree = findViewById(R.id.measureThree);
         addToScore= findViewById( R.id.addToScore );
 
-        addToScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { 
-                Avatar.addToScoreMethod();
-                Toast.makeText(getApplicationContext(), "Score has been added, return back",Toast.LENGTH_LONG).show();
-            }
-        });
+     //   addToScore.setOnClickListener(new View.OnClickListener() {
+     //       @Override
+       //     public void onClick(View v) {
+           //     Avatar.addToScoreMethod();
+       //         Toast.makeText(getApplicationContext(), "Score has been added, return back",Toast.LENGTH_LONG).show();
+      //      }
+    //    });
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);

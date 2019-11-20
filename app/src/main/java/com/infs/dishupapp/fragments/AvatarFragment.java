@@ -8,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.infs.dishupapp.R;
@@ -53,7 +51,7 @@ public class AvatarFragment extends Fragment {
         progressBar.setMax(10);
         progressBar.setProgress(0);
         final RecipeDetailActivity rcp= new RecipeDetailActivity();
-        progressBar.setProgress( rcp.getClicks());
+  //      progressBar.setProgress( rcp.getClicks());
 
         //counting the scores
         //someone set the count scores in the recipe part
