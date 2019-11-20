@@ -1,13 +1,12 @@
 package com.infs.dishupapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,23 +41,16 @@ public class RecipeListFragment extends Fragment {
     recyclerView = view.findViewById(R.id.rvSearch);
     LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        return view;
-}
-
-
-    public void newCategoryItemActivity() {
-
         final CategoryListAdapter categoryListAdapter = new CategoryListAdapter();
-        Fragment fragment = new RecipeListFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
+
+
+        Intent intent = getIntent();
+        String category = intent.getStringExtra("Beef");
 
         final CategoryFragment categoryFragment = new CategoryFragment();
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + categoryFragment.getCategory();
+        String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + category;
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
@@ -85,5 +77,18 @@ public class RecipeListFragment extends Fragment {
             }
         });
         queue.add(stringRequest);
+
+
+
+
+        return view;
+}
+
+
+    public void newCategoryItemActivity() {
+
+
     }
+
+
 }
