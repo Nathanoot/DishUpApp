@@ -16,13 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.infs.dishupapp.AppDataBase;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.adapters.CategoryListAdapter;
-import com.infs.dishupapp.models.CategoryItem;
-
-import java.util.Arrays;
-import java.util.List;
+import com.infs.dishupapp.models.MenuList;
 
 public class RecipeListFragment extends Fragment {
 
@@ -56,12 +52,17 @@ public class RecipeListFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        CategoryItem categoryItem = gson.fromJson(response, CategoryItem.class);
-                        List<CategoryItem> itemCategory = Arrays.asList(categoryItem);
-                        categoryListAdapter.setData(itemCategory);
+                        MenuList menuList = gson.fromJson(response, MenuList.class);
+                      //  List<CategoryItem> items = menuList.results;
+                 //       List<CategoryItem> itemCategory = Arrays.asList(menuList.results);
+                        categoryListAdapter.setData(menuList.meals);
                         recyclerView.setAdapter(categoryListAdapter);
-                        AppDataBase db=AppDataBase.getInstance( getContext() );
-                        InsertRecipeAsyncTask insertRecipeAsyncTask= new InsertRecipeAsyncTask();
+                      //  AppDataBase db=AppDataBase.getInstance( getContext() );
+                       // InsertRecipeAsyncTask insertRecipeAsyncTask= new InsertRecipeAsyncTask();
+//                       System.out.println(categoryListAdapter.getItemCount());
+                  //      for (int i = 0; i < menuList.results.size(); i++) {
+                  //          System.out.println(menuList.results.get(i));
+                  //      }
 
 
                         System.out.println("This is the OnResponse");
