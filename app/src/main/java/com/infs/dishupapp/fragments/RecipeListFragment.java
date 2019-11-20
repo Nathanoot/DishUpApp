@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.infs.dishupapp.AppDataBase;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.adapters.CategoryListAdapter;
 import com.infs.dishupapp.models.CategoryItem;
@@ -69,7 +70,9 @@ public class RecipeListFragment extends Fragment {
                         List<CategoryItem> itemCategory = Arrays.asList(categoryItem);
                         categoryListAdapter.setData(itemCategory);
                         recyclerView.setAdapter(categoryListAdapter);
-                        //   FakeDatabase.saveArticlesToFakeDatabase(articleCat);
+                        AppDataBase db=AppDataBase.getInstance( getContext() );
+                        InsertRecipeAsyncTask insertRecipeAsyncTask= new InsertRecipeAsyncTask();
+
 
                         System.out.println("This is the OnResponse");
                     }

@@ -2,8 +2,10 @@ package com.infs.dishupapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,6 +33,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private TextView measureThree;
     private Button addToScore;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         measureOne = findViewById(R.id.measureOne);
         measureTwo = findViewById(R.id.measureTwo);
         measureThree = findViewById(R.id.measureThree);
+        addToScore= findViewById( R.id.addToScore );
 
 
         Intent intent = getIntent();
@@ -80,6 +84,26 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 error.printStackTrace();
                 System.out.println("Error");
             }
+            int clickcount=0;
+
+           public getClicks(){
+               @Override
+            addToScore.OnClickListene(new View.OnClickListener(){
+                @Override
+                        public void onClick(View view){
+                    clickcount=clickcount+1;
+                    if(clickcount==1){
+                        Toast.makeText(getApplicationContext(),"Button clicked first time!", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),"Button clicked count is"+clickcount, Toast.LENGTH_LONG).show();
+                    }
+
+                }
+                });
+           }
+
         });
 
         queue.add(stringRequest);
