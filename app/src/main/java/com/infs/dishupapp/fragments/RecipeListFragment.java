@@ -32,6 +32,7 @@ public class RecipeListFragment extends Fragment {
 
     public RecipeListFragment() {
 
+
     }
 
     @Override
@@ -43,9 +44,8 @@ public class RecipeListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         final CategoryListAdapter categoryListAdapter = new CategoryListAdapter();
 
-
-        Intent intent = getIntent();
-        String category = intent.getStringExtra("Beef");
+        Intent intent = getActivity().getIntent();
+        String category = intent.getStringExtra("beef");
 
         final CategoryFragment categoryFragment = new CategoryFragment();
 

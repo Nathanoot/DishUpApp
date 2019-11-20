@@ -1,6 +1,5 @@
 package com.infs.dishupapp.fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -48,11 +47,10 @@ public class CategoryFragment extends Fragment {
         beefButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Beef";
-                Context context = view.getContext();
-                Intent intent = new Intent(context, RecipeListFragment.class);
-                intent.putExtra("Beef", getCategory());
-                context.startActivity(intent);
+                String category = "Beef";
+                Intent intent = new Intent(getActivity(), RecipeListFragment.class);
+                intent.putExtra("beef", category);
+                getActivity().startActivity(intent);
                 Fragment fragment = new RecipeListFragment();
                 swapFragment(fragment);
 
