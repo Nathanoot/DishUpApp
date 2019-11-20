@@ -1,6 +1,5 @@
 package com.infs.dishupapp.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,13 +43,12 @@ public class RecipeListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         final CategoryListAdapter categoryListAdapter = new CategoryListAdapter();
 
-        Intent intent = getActivity().getIntent();
-        String category = intent.getStringExtra("beef");
+    //    Intent intent = getActivity().getIntent();
+      //  String category = intent.getStringExtra("beef");
 
-        final CategoryFragment categoryFragment = new CategoryFragment();
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url2 = "http://www.themealdb.com/api/json/v1/1/filter.php?c=" + category;
+        String url2 = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef";
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
@@ -58,7 +56,7 @@ public class RecipeListFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        CategoryItem[] categoryItem = gson.fromJson(response, CategoryItem[].class);
+                        CategoryItem categoryItem = gson.fromJson(response, CategoryItem.class);
                         List<CategoryItem> itemCategory = Arrays.asList(categoryItem);
                         categoryListAdapter.setData(itemCategory);
                         recyclerView.setAdapter(categoryListAdapter);
