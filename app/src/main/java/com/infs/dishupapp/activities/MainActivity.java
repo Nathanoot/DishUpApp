@@ -14,7 +14,7 @@ import com.infs.dishupapp.R;
 import com.infs.dishupapp.fragments.AvatarFragment;
 import com.infs.dishupapp.fragments.CategoryFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  {
 
     private BottomNavigationView bottomNavigationView;
     @Override
