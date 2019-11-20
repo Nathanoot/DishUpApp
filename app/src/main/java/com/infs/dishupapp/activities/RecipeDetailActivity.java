@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.infs.dishupapp.R;
+import com.infs.dishupapp.models.Avatar;
 import com.infs.dishupapp.models.Recipe;
 
 public class RecipeDetailActivity extends AppCompatActivity {
@@ -51,6 +52,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
         measureThree = findViewById(R.id.measureThree);
         addToScore= findViewById( R.id.addToScore );
 
+        addToScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { 
+                Avatar.addToScoreMethod();
+                Toast.makeText(getApplicationContext(), "Score has been added, return back",Toast.LENGTH_LONG).show();
+            }
+        });
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);
@@ -84,25 +92,24 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 error.printStackTrace();
                 System.out.println("Error");
             }
-            int clickcount=0;
 
-           public getClicks(){
-               @Override
-            addToScore.OnClickListene(new View.OnClickListener(){
-                @Override
-                        public void onClick(View view){
-                    clickcount=clickcount+1;
-                    if(clickcount==1){
-                        Toast.makeText(getApplicationContext(),"Button clicked first time!", Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(),"Button clicked count is"+clickcount, Toast.LENGTH_LONG).show();
-                    }
-
-                }
-                });
-           }
+//           public void getClicks(){
+//               @Override
+//            addToScore.OnClickListene(new View.OnClickListener(){
+//                @Override
+//                        public void onClick(View view){
+//                    clickcount=clickcount+1;
+//                    if(clickcount==1){
+//                        Toast.makeText(getApplicationContext(),"Button clicked first time!", Toast.LENGTH_LONG).show();
+//                    }
+//                    else
+//                    {
+//                        Toast.makeText(getApplicationContext(),"Button clicked count is"+clickcount, Toast.LENGTH_LONG).show();
+//                    }
+//
+//                }
+//                });
+//           }
 
         });
 
@@ -110,5 +117,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
     }
+
 
 }

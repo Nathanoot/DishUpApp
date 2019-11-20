@@ -64,5 +64,7 @@ public class AvatarFragment extends Fragment {
 
 return view;
     }
+
+
     }
 

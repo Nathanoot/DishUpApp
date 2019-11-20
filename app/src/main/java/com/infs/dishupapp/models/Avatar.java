@@ -4,7 +4,7 @@ import android.widget.ImageView;
 
 public class Avatar {
     private String name;
-    private int score;
+    private int score = 0;
     private ImageView character;
 
     public String getName() {
@@ -21,6 +21,11 @@ public class Avatar {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void addToScoreMethod() {
+        score++;
+        System.out.println("Score has increased by 1");
     }
 }
 
