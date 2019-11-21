@@ -6,11 +6,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.infs.dishupapp.activities.AvatarDao;
 import com.infs.dishupapp.activities.RecipeDao;
 import com.infs.dishupapp.models.Recipe;
 
 @Database(entities = {Recipe.class}, version = 1)
 public abstract class AppDataBase extends RoomDatabase {
+
+    public abstract AvatarDao avatarDao();
     public abstract RecipeDao recipeDao();
 
     private static AppDataBase instance;

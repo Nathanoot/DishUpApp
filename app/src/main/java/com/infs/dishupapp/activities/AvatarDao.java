@@ -8,11 +8,11 @@ import com.infs.dishupapp.models.Avatar;
 import java.util.List;
 
 public interface AvatarDao {
-    //getting username from DB
     @Query("SELECT * FROM avatar")
         List<Avatar> getAvatarbyUsername (String username);
-    //Getting score
-
+    //add scores to existing scores
+    @Query("UPDATE AVATAR SET score = (:addPoints + :currentScore)")
+    public void addPoints(int addPoints,int currentScore);
 
 
 
