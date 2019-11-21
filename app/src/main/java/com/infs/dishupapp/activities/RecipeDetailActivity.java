@@ -16,6 +16,9 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Meals;
+import com.infs.dishupapp.models.Recipe;
+
+import java.util.ArrayList;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
@@ -38,7 +41,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_detail);
 
         mealName = findViewById(R.id.mealName);
-        mealCategory = findViewById(R.id.mealName);
+        mealCategory = findViewById(R.id.mealCategory);
         mealInstructions = findViewById(R.id.mealInstructions);
         ingredientOne = findViewById(R.id.ingredientOne);
         ingredientTwo = findViewById(R.id.ingredientTwo);
@@ -69,26 +72,20 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Gson gson = new Gson ();
                         Meals meals = gson.fromJson(response, Meals.class);
+                  //      Meals[] meals = gson.fromJson(response, Meals[].class);
+                 //       List<Meals.Recipe> abc = Arrays.asList(meals);
+                        ArrayList<Recipe> recipay = meals.meals;
 
-
-                     //   List<Recipe> recipes = recipeMeal.meals;
-
-//
-//                              for (int i = 0; i < recipes.size(); i++) {
-//                                  System.out.println(recipes.get(i));
-//                              }
-
-//
-                        mealName.setText(meals.getStrMeal());
-//                        mealCategory.setText(recipe.getStrCategory());
-//                        mealInstructions.setText(recipe.getStrInstructions());
-//                        ingredientOne.setText(recipe.getStrIngredient1());
-//                        ingredientTwo.setText(recipe.getStrIngredient2());
-//                        ingredientThree.setText(recipe.getStrIngredient3());
-//                        ingredientFour.setText(recipe.getStrIngredient4());
-//                        measureOne.setText(recipe.getStrMeasure1());
-//                        ingredientOne.setText(recipe.getStrMeasure2());
-//                        ingredientOne.setText(recipe.getStrMeasure3());
+                        mealName.setText(recipay.get(0).getStrMeal());
+                        mealCategory.setText(recipay.get(0).getStrCategory());
+                        mealInstructions.setText(recipay.get(0).getStrInstructions());
+                        ingredientOne.setText(recipay.get(0).getStrIngredient1());
+                        ingredientTwo.setText(recipay.get(0).getStrIngredient2());
+                        ingredientThree.setText(recipay.get(0).getStrIngredient3());
+                        ingredientFour.setText(recipay.get(0).getStrIngredient4());
+                        measureOne.setText(recipay.get(0).getStrMeasure1());
+                        measureTwo.setText(recipay.get(0).getStrMeasure2());
+                        measureThree.setText(recipay.get(0).getStrMeasure3());
 
 
                     }
@@ -123,6 +120,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 }
