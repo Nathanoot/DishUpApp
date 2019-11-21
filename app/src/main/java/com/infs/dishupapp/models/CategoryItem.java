@@ -2,7 +2,7 @@ package com.infs.dishupapp.models;
 
 public class CategoryItem {
 
-    //Comment
+
     public int idMeal;
     public String strMeal;
     public String strMealThumb;
