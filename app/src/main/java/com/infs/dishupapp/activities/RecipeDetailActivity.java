@@ -3,6 +3,7 @@ package com.infs.dishupapp.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
@@ -33,12 +35,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private TextView measureTwo;
     private TextView measureThree;
     private Button addToScore;
+    private ImageView foodPic;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
+
 
         mealName = findViewById(R.id.mealName);
         mealCategory = findViewById(R.id.mealCategory);
@@ -51,14 +55,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
         measureTwo = findViewById(R.id.measureTwo);
         measureThree = findViewById(R.id.measureThree);
         addToScore= findViewById( R.id.addToScore );
+        foodPic= findViewById( R.id.foodPic );
 
-     //   addToScore.setOnClickListener(new View.OnClickListener() {
-     //       @Override
-       //     public void onClick(View v) {
-           //     Avatar.addToScoreMethod();
-       //         Toast.makeText(getApplicationContext(), "Score has been added, return back",Toast.LENGTH_LONG).show();
-      //      }
-    //    });
+
+
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);
@@ -70,10 +70,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(String response) {
+
                         Gson gson = new Gson ();
                         Meals meals = gson.fromJson(response, Meals.class);
-                  //      Meals[] meals = gson.fromJson(response, Meals[].class);
-                 //       List<Meals.Recipe> abc = Arrays.asList(meals);
                         ArrayList<Recipe> recipay = meals.meals;
 
                         mealName.setText(recipay.get(0).getStrMeal());
@@ -88,6 +87,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
                         measureThree.setText(recipay.get(0).getStrMeasure3());
 
 
+
+
+
+
+
+
+
+
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -96,23 +103,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 System.out.println("Error");
             }
 
-//           public void getClicks(){
-//               @Override
-//            addToScore.OnClickListene(new View.OnClickListener(){
-//                @Override
-//                        public void onClick(View view){
-//                    clickcount=clickcount+1;
-//                    if(clickcount==1){
-//                        Toast.makeText(getApplicationContext(),"Button clicked first time!", Toast.LENGTH_LONG).show();
-//                    }
-//                    else
-//                    {
-//                        Toast.makeText(getApplicationContext(),"Button clicked count is"+clickcount, Toast.LENGTH_LONG).show();
-//                    }
-//
-//                }
-//                });
-//           }
 
         });
 

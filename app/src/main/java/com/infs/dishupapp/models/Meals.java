@@ -1,8 +1,10 @@
 package com.infs.dishupapp.models;
 
+import java.util.ArrayList;
+
 public class Meals {
 
-    public String meals;
+    public ArrayList<com.infs.dishupapp.models.Recipe> meals;
 
     public Recipe[] recipe;
 
