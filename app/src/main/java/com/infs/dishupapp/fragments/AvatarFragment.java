@@ -30,20 +30,19 @@ public class AvatarFragment extends Fragment {
         character= view.findViewById( R.id.imageAvatar);
         //setting up scoring system
         final Avatar avatar= new Avatar();
-
         if(avatar.getScore()<2){
             character.setImageResource(R.drawable.baby);
         }
-        else if(avatar.getScore()<4) {
+        if(avatar.getScore()<4) {
             character.setImageResource( R.drawable.level2 );
         }
-        else if(avatar.getScore()<6) {
+        if(avatar.getScore()<6) {
             character.setImageResource( R.drawable.boy );
         }
-        else if(avatar.getScore()<8){
+        if(avatar.getScore()<8){
             character.setImageResource( R.drawable.level4);
         }
-        else if(avatar.getScore()>9) {
+        if(avatar.getScore()>9) {
             character.setImageResource( R.drawable.chef);
         }
         //setting up the horizontal progress bar
@@ -51,8 +50,8 @@ public class AvatarFragment extends Fragment {
         score=view.findViewById( R.id.score );
         progressBar.setMax(10);
         progressBar.setProgress(0);
-        final Avatar a= new Avatar();
-        progressBar.setProgress(a.getScore());
+        final RecipeDetailActivity rcp= new RecipeDetailActivity();
+  //      progressBar.setProgress( rcp.getClicks());
 
         //counting the scores
         //someone set the count scores in the recipe part

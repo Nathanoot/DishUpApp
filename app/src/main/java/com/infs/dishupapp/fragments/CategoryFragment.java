@@ -46,11 +46,10 @@ public class CategoryFragment extends Fragment {
         beefButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          //      String category = "Beef";
-              //  Intent intent = new Intent(getActivity(), RecipeListFragment.class);
-         //       intent.putExtra("beef", category);
-          //      getActivity().startActivity(intent);
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Beef");
                 Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
                 swapFragment(fragment);
 
             }
@@ -59,55 +58,76 @@ public class CategoryFragment extends Fragment {
         breakfastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Breakfast";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Breakfast");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
 
         chickenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Chicken";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Chicken");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
 
         dessertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Dessert";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Dessert");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
 
         porkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Pork";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Pork");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
 
         seafoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Seafood";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Seafood");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
 
         veganButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Vegan";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Vegan");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
         vegetarianButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                category = "Vegetarian";
-                recipe.newCategoryItemActivity();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Vegetarian");
+                Fragment fragment = new RecipeListFragment();
+                fragment.setArguments(bundle);
+                swapFragment(fragment);
             }
         });
 
