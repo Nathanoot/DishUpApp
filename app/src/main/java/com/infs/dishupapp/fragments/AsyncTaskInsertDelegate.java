@@ -1,5 +1,5 @@
-package com.infs.dishupapp.fragments;
-
-public interface AsyncTaskInsertDelegate {
-    void handleTaskResult(String result);
-}
+//package com.infs.dishupapp.fragments;
+//
+//public interface AsyncTaskInsertDelegate {
+//    void handleTaskResult(String result);
+//}

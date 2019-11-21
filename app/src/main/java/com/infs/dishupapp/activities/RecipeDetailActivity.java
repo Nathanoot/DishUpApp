@@ -2,7 +2,6 @@ package com.infs.dishupapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,12 +56,12 @@ public class RecipeDetailActivity extends AppCompatActivity {
         addToScore= findViewById( R.id.addToScore );
         imageOne = findViewById(R.id.imageView);
 
-        addToScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        addToScore.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);

@@ -1,15 +1,8 @@
 package com.infs.dishupapp.models;
 
-import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity
 public class CategoryItem {
 
-    @PrimaryKey
-    @NonNull
-    public int idCategory;
+    public int idMeal;
     public String strMeal;
     public String strMealThumb;
 
@@ -22,7 +15,7 @@ public class CategoryItem {
         return strMealThumb;
     }
 
-    public int getIdCategory() {
-        return idCategory;
+    public int getIdMeal() {
+        return idMeal;
     }
 }

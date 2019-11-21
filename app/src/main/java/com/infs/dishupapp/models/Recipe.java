@@ -1,10 +1,6 @@
 package com.infs.dishupapp.models;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-@Entity
 public class Recipe {
-    @PrimaryKey
     private int idMeal;
 
     private String strMeal;
@@ -34,6 +30,31 @@ public class Recipe {
     private String strMeasure7;
     private String strMeasure8;
 
+    public Recipe(int idMeal, String strMeal, String strCategory, String strInstructions, String strTags, String strMealThumb, String strYoutube, String strIngredient1, String strIngredient2, String strIngredient3, String strIngredient4, String strIngredient5, String strIngredient6, String strIngredient7, String strIngredient8, String strMeasure1, String strMeasure2, String strMeasure3, String strMeasure4, String strMeasure5, String strMeasure6, String strMeasure7, String strMeasure8) {
+        this.idMeal = idMeal;
+        this.strMeal = strMeal;
+        this.strCategory = strCategory;
+        this.strInstructions = strInstructions;
+        this.strTags = strTags;
+        this.strMealThumb = strMealThumb;
+        this.strYoutube = strYoutube;
+        this.strIngredient1 = strIngredient1;
+        this.strIngredient2 = strIngredient2;
+        this.strIngredient3 = strIngredient3;
+        this.strIngredient4 = strIngredient4;
+        this.strIngredient5 = strIngredient5;
+        this.strIngredient6 = strIngredient6;
+        this.strIngredient7 = strIngredient7;
+        this.strIngredient8 = strIngredient8;
+        this.strMeasure1 = strMeasure1;
+        this.strMeasure2 = strMeasure2;
+        this.strMeasure3 = strMeasure3;
+        this.strMeasure4 = strMeasure4;
+        this.strMeasure5 = strMeasure5;
+        this.strMeasure6 = strMeasure6;
+        this.strMeasure7 = strMeasure7;
+        this.strMeasure8 = strMeasure8;
+    }
 
     public int getIdMeal() {
         return idMeal;
