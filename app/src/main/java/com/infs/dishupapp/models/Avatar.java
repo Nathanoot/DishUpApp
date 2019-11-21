@@ -2,7 +2,13 @@ package com.infs.dishupapp.models;
 
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+@Entity
 public class Avatar {
+    @NonNull
+    @PrimaryKey
     private String name;
     private int score = 0;
     private ImageView character;
@@ -23,9 +29,5 @@ public class Avatar {
         this.score = score;
     }
 
-    public void addToScoreMethod() {
-        score++;
-        System.out.println("Score has increased by 1");
-    }
 }
 

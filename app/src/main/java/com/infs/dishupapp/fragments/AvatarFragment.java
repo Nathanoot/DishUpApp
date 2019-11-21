@@ -44,15 +44,19 @@ public class AvatarFragment extends Fragment {
         });
         //setting up scoring system
         final Avatar avatar= new Avatar();
-        if(avatar.getScore()<2) {
+        if(avatar.getScore()<2){
             character.setImageResource(R.drawable.baby);
-        } else if(avatar.getScore()<4) {
+        }
+        if(avatar.getScore()<4) {
             character.setImageResource( R.drawable.level2 );
-        } else if(avatar.getScore()<6) {
+        }
+        if(avatar.getScore()<6) {
             character.setImageResource( R.drawable.boy );
-        } else if(avatar.getScore()<8){
+        }
+        if(avatar.getScore()<8){
             character.setImageResource( R.drawable.level4);
-        } else {
+        }
+        if(avatar.getScore()>9) {
             character.setImageResource( R.drawable.chef);
         }
         //setting up the horizontal progress bar
