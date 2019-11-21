@@ -30,7 +30,6 @@ public class AvatarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_avatar, container, false);
-        name= view.findViewById(R.id.userName);
         character= view.findViewById( R.id.imageAvatar);
         button = view.findViewById(R.id.buttonToCategory);
 
