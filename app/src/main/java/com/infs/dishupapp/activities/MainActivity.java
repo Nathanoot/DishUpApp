@@ -35,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 if (menuItem.getItemId() == R.id.nav_avatar) {
                     Fragment fragment = new AvatarFragment();
                     swapFragment(fragment);
-                    setFragmentTitle("Cat breeds");
+                    setFragmentTitle("Profile");
                     return true;
                 } else if (menuItem.getItemId() == R.id.nav_recipes) {
                     Fragment fragment = new CategoryFragment();
                     swapFragment(fragment);
-                    setFragmentTitle("Favourites");
+                    setFragmentTitle("Recipes");
                     return true;
                 }
                 return false;

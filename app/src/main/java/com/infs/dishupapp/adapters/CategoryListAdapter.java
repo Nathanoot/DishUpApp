@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.activities.RecipeDetailActivity;
 import com.infs.dishupapp.models.CategoryItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -42,6 +44,10 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
 
         holder.nameTextView.setText(categoryItemAtPosition.getStrMeal());
 
+        String imageUrl = categoryItemAtPosition.getStrMealThumb();
+       // Picasso.get().load(imageUrl).into(imageView2);
+        Picasso.get().load(imageUrl).into(holder.imageView2);
+
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,12 +67,14 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
     public static class CategoryItemViewHolder extends RecyclerView.ViewHolder {
         public View view;
         public TextView nameTextView;
+        public ImageView imageView2;
 
 
         public CategoryItemViewHolder(View v) {
             super(v);
             view = v;
             nameTextView = v.findViewById(R.id.recipeName);
+            imageView2 = v.findViewById(R.id.imageView2);
 
         }
     }

@@ -82,10 +82,5 @@ public class RecipeListFragment extends Fragment {
 }
 
 
-    public void newCategoryItemActivity() {
-
-
-    }
-
 
 }

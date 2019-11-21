@@ -2,7 +2,9 @@ package com.infs.dishupapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ import com.google.gson.Gson;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -33,6 +36,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private TextView measureTwo;
     private TextView measureThree;
     private Button addToScore;
+    public ImageView imageOne;
 
 
     @Override
@@ -51,14 +55,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
         measureTwo = findViewById(R.id.measureTwo);
         measureThree = findViewById(R.id.measureThree);
         addToScore= findViewById( R.id.addToScore );
+        imageOne = findViewById(R.id.imageView);
 
-     //   addToScore.setOnClickListener(new View.OnClickListener() {
-     //       @Override
-       //     public void onClick(View v) {
-           //     Avatar.addToScoreMethod();
-       //         Toast.makeText(getApplicationContext(), "Score has been added, return back",Toast.LENGTH_LONG).show();
-      //      }
-    //    });
+        addToScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);
@@ -86,6 +90,12 @@ public class RecipeDetailActivity extends AppCompatActivity {
                         measureOne.setText(recipay.get(0).getStrMeasure1());
                         measureTwo.setText(recipay.get(0).getStrMeasure2());
                         measureThree.setText(recipay.get(0).getStrMeasure3());
+
+
+                        String imageUrl = recipay.get(0).getStrMealThumb();
+                        ImageView imageOne = (ImageView) findViewById(R.id.imageView);
+                        Picasso.get().load(imageUrl).into(imageOne);
+
 
 
                     }

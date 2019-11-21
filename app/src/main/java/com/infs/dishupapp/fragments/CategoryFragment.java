@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,14 +15,14 @@ import com.infs.dishupapp.R;
 
 public class CategoryFragment extends Fragment {
 
-    public Button beefButton;
-    public Button breakfastButton;
-    public Button chickenButton;
-    public Button dessertButton;
-    public Button porkButton;
-    public Button seafoodButton;
-    public Button veganButton;
-    public Button vegetarianButton;
+    public ImageButton beefButton;
+    public ImageButton breakfastButton;
+    public ImageButton chickenButton;
+    public ImageButton dessertButton;
+    public ImageButton porkButton;
+    public ImageButton seafoodButton;
+    public ImageButton veganButton;
+    public ImageButton vegetarianButton;
     public String category;
 
 
@@ -42,6 +43,7 @@ public class CategoryFragment extends Fragment {
         veganButton = view.findViewById(R.id.imageButton7);
         vegetarianButton = view.findViewById(R.id.imageButton8);
         final RecipeListFragment recipe = new RecipeListFragment();
+        Toast.makeText(getActivity(), "Choose your Category", Toast.LENGTH_LONG).show();
 
         beefButton.setOnClickListener(new View.OnClickListener() {
             @Override

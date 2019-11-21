@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.activities.RecipeDetailActivity;
@@ -19,6 +22,7 @@ public class AvatarFragment extends Fragment {
     private ProgressBar progressBar;
     private ImageView character;
     private TextView score;
+    private Button button;
 
     public AvatarFragment(){
     }
@@ -28,6 +32,16 @@ public class AvatarFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_avatar, container, false);
         name= view.findViewById(R.id.userName);
         character= view.findViewById( R.id.imageAvatar);
+        button = view.findViewById(R.id.buttonToCategory);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new CategoryFragment();
+                swapFragment(fragment);
+
+            }
+        });
         //setting up scoring system
         final Avatar avatar= new Avatar();
         if(avatar.getScore()<2) {
@@ -52,13 +66,19 @@ public class AvatarFragment extends Fragment {
         //counting the scores
         //someone set the count scores in the recipe part
         //if button is clicked, then score++
-
-
-
-
 return view;
     }
 
 
+
+    private void swapFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+
+    }
     }
 
