@@ -15,7 +15,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.infs.dishupapp.R;
-import com.infs.dishupapp.models.Recipe;
+import com.infs.dishupapp.models.Meals;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
@@ -59,7 +59,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);
-        String url2 = "http://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal;
+        String url2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal;
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
@@ -68,18 +68,27 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson ();
-                        Recipe recipe = gson.fromJson(response, Recipe.class);
+                        Meals meals = gson.fromJson(response, Meals.class);
 
-                        mealName.setText(recipe.getStrMeal());
-                        mealCategory.setText(recipe.getStrCategory());
-                        mealInstructions.setText(recipe.getStrInstructions());
-                        ingredientOne.setText(recipe.getStrIngredient1());
-                        ingredientTwo.setText(recipe.getStrIngredient2());
-                        ingredientThree.setText(recipe.getStrIngredient3());
-                        ingredientFour.setText(recipe.getStrIngredient4());
-                        measureOne.setText(recipe.getStrMeasure1());
-                        ingredientOne.setText(recipe.getStrMeasure2());
-                        ingredientOne.setText(recipe.getStrMeasure3());
+
+                     //   List<Recipe> recipes = recipeMeal.meals;
+
+//
+//                              for (int i = 0; i < recipes.size(); i++) {
+//                                  System.out.println(recipes.get(i));
+//                              }
+
+//
+                        mealName.setText(meals.getStrMeal());
+//                        mealCategory.setText(recipe.getStrCategory());
+//                        mealInstructions.setText(recipe.getStrInstructions());
+//                        ingredientOne.setText(recipe.getStrIngredient1());
+//                        ingredientTwo.setText(recipe.getStrIngredient2());
+//                        ingredientThree.setText(recipe.getStrIngredient3());
+//                        ingredientFour.setText(recipe.getStrIngredient4());
+//                        measureOne.setText(recipe.getStrMeasure1());
+//                        ingredientOne.setText(recipe.getStrMeasure2());
+//                        ingredientOne.setText(recipe.getStrMeasure3());
 
 
                     }
