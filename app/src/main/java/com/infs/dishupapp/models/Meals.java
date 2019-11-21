@@ -1,12 +1,17 @@
 package com.infs.dishupapp.models;
 
-public class Meals {
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
+public class Meals {
     public String meals;
 
     public Recipe[] recipe;
 
     public class Recipe {
+        @PrimaryKey
         private int idMeal;
 
         private String strMeal;
