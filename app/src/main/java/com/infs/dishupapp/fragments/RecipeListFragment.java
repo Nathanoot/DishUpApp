@@ -39,12 +39,10 @@ public class RecipeListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         final CategoryListAdapter categoryListAdapter = new CategoryListAdapter();
 
-    //    Intent intent = getActivity().getIntent();
-      //  String category = intent.getStringExtra("beef");
-
+        String value = getArguments().getString("category");
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url2 = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef";
+        String url2 = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + value;
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
