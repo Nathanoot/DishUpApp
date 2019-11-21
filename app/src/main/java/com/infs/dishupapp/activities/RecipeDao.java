@@ -16,12 +16,6 @@ public interface RecipeDao {
     @Query("SELECT * FROM recipe")
     List<Recipe> getAll();
 
-    //finding recipes by ID?
-    @Query("SELECT * FROM recipe WHERE idMeal = :idMeal")
-    Recipe findRecipeByidMeal(int idMeal);
-   //get image per id
-    @Query("SELECT strMealThumb FROM recipe WHERE idMeal=:idMeal")
-    Recipe findFoodPic (int idMeal);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Recipe> recipes);

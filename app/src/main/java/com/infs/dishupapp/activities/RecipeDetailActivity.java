@@ -2,9 +2,11 @@ package com.infs.dishupapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,10 +19,13 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.infs.dishupapp.R;
+import com.infs.dishupapp.fragments.InsertScoreAsyncTask;
+import com.infs.dishupapp.models.Avatar;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
@@ -57,7 +62,16 @@ public class RecipeDetailActivity extends AppCompatActivity {
         addToScore= findViewById( R.id.addToScore );
         foodPic= findViewById( R.id.foodPic );
 
+        //set on click listener
+        //call upon database method
+        // increment database method by 1
+        addToScore.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InsertScoreAsyncTask insert= new InsertScoreAsyncTask();
 
+            }
+        } );
 
 
         Intent intent = getIntent();
@@ -86,15 +100,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
                         measureTwo.setText(recipay.get(0).getStrMeasure2());
                         measureThree.setText(recipay.get(0).getStrMeasure3());
 
-
-
-
-
-
-
-
-
-
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -113,5 +118,5 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
 
+    }
 
-}
