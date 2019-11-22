@@ -17,7 +17,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.infs.dishupapp.activities.RecipeDao;
 import com.infs.dishupapp.activities.ScoreDao;
 import com.infs.dishupapp.interfaces.NoteDao;
-import com.infs.dishupapp.interfaces.ScoreDao;
 import com.infs.dishupapp.models.Note;
 
 @Database(entities = {Note.class/*, Recipe.class*/}, version = 1)

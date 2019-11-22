@@ -17,11 +17,5 @@ public class Score {
         this.score = score;
     }
 
-    public int getAddscore() {
-        return addscore;
-    }
 
-    public void setAddscore(int addscore) {
-        this.addscore = addscore;
-    }
 }

@@ -23,9 +23,8 @@ public class InsertScoreAsyncTask extends AsyncTask<Object, Integer, String> {
     @Override
     protected String doInBackground(Object... params) {
         int currentscore= (int)params[0];
-        int addscore= (int)params[1];
 
-        db.scoreDao().totalScore( addscore, currentscore );
+        db.scoreDao().insert( currentscore );
 
 
         return "points added";
