@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DishUpApp</string>
+    <string name="notes_text"> View and create recipe notes or shopping lists. </string>
 </resources>
