@@ -17,9 +17,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.infs.dishupapp.activities.RecipeDao;
 import com.infs.dishupapp.activities.ScoreDao;
 import com.infs.dishupapp.interfaces.NoteDao;
+import com.infs.dishupapp.models.Avatar;
 import com.infs.dishupapp.models.Note;
+import com.infs.dishupapp.models.Recipe;
 
-@Database(entities = {Note.class/*, Recipe.class*/}, version = 1)
+@Database(entities = {Note.class, Recipe.class, Avatar.class}, version = 1)
 public abstract class AppDataBase extends RoomDatabase {
     // Turn the class into a singleton, so we can only use the current instnace and can't create
     // multiple instances of the db.

@@ -6,8 +6,8 @@ import androidx.room.Insert;
 @Dao
 public interface ScoreDao {
     //Obtaining score
-    @Insert
-    void insert(int score);
+//    @Insert
+//    void insert(int score);
 
 
 

@@ -1,6 +1,8 @@
 package com.infs.dishupapp.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,10 +23,11 @@ import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
 import com.infs.dishupapp.models.Score;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class RecipeDetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class RecipeDetailActivity extends AppCompatActivity {
 
     private TextView mealName;
     private TextView mealCategory;
@@ -39,6 +42,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
     private Button addToScore;
     public ImageView imageOne;
     int scorecount;
+    public static int recipeScore;
 
 
     @Override
@@ -60,14 +64,6 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
         addToScore= findViewById( R.id.addToScore );
         imageOne = findViewById(R.id.imageView);
 
-        addToScore.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setAddToScore();
-                Toast.makeText(getApplicationContext(),"Point has been added",Toast.LENGTH_LONG).show();
-
-            }
-        } );
 
 
         Intent intent = getIntent();
@@ -99,7 +95,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
 
                         String imageUrl = recipay.get(0).getStrMealThumb();
                         ImageView imageOne = (ImageView) findViewById(R.id.imageView);
-//                        Picasso.get().load(imageUrl).into(imageOne);
+                        Picasso.get().load(imageUrl).into(imageOne);
 
 
 
@@ -117,19 +113,29 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
         queue.add(stringRequest);
 
 
-    }
-    public int setAddToScore(){
-        Score s= new Score();
-        scorecount=0;
-        scorecount++;
-        int totalscore= scorecount;
-        s.setScore( totalscore );
-        System.out.println("score is: " + totalscore);
-        return totalscore;
-    }
+        //Load score
+//        SharedPreferences myScore = this.getSharedPreferences("cookingScorre", Context.MODE_PRIVATE);
+//        recipeScore = myScore.getInt("recipeScore", 0);
+//        score.setText(String.valueOf(recipeScore));
 
-    @Override
-    public void onClick(View v) {
+        addToScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                saveScore();
+                recipeScore++;
+
+                // Save score
+                SharedPreferences myScore = getSharedPreferences("cookingScare", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = myScore.edit();
+                editor.putInt("recipeScore", recipeScore);
+                editor.commit();
+
+                Toast.makeText(getApplicationContext(),"Congratulations a point has been added",Toast.LENGTH_LONG).show();
+//                score.setText(String.valueOf(recipeScore));
+
+//                addToScore.setEnabled(false);
+            }
+        });
 
     }
 }

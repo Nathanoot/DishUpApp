@@ -1,11 +1,13 @@
 package com.infs.dishupapp.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity
 public class Avatar {
 
     @PrimaryKey
+    @NonNull
     private String name;
     private int score;
 
@@ -19,6 +21,10 @@ public class Avatar {
 
     public int getScore() {
         return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }
 

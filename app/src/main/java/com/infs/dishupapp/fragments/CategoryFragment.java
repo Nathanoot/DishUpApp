@@ -34,14 +34,14 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                             Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_category, container, false);
-        beefButton = view.findViewById(R.id.imageButton);
-        breakfastButton = view.findViewById(R.id.imageButton2);
-        chickenButton = view.findViewById(R.id.imageButton3);
-        dessertButton = view.findViewById(R.id.imageButton4);
-        porkButton = view.findViewById(R.id.imageButton5);
-        seafoodButton = view.findViewById(R.id.imageButton6);
-        veganButton = view.findViewById(R.id.imageButton7);
-        vegetarianButton = view.findViewById(R.id.imageButton8);
+        beefButton = view.findViewById(R.id.imageBeef);
+        breakfastButton = view.findViewById(R.id.imageBreakfast);
+        chickenButton = view.findViewById(R.id.imageChicken);
+        dessertButton = view.findViewById(R.id.imageDessert);
+        porkButton = view.findViewById(R.id.imagePork);
+        seafoodButton = view.findViewById(R.id.imageSeafood);
+        veganButton = view.findViewById(R.id.imageVegan);
+        vegetarianButton = view.findViewById(R.id.imageVegetarian);
         final RecipeListFragment recipe = new RecipeListFragment();
         Toast.makeText(getActivity(), "Choose your Category", Toast.LENGTH_LONG).show();
 
