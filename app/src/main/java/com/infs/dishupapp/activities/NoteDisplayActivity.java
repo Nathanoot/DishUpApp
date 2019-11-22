@@ -1,6 +1,5 @@
 package com.infs.dishupapp.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,6 +22,9 @@ import com.infs.dishupapp.models.Note;
 import com.infs.dishupapp.models.NoteViewModel;
 
 import java.util.List;
+
+// MVVM Concepts referenced from:
+// https://medium.com/mindorks/android-architecture-components-room-viewmodel-and-livedata-50611793e4a9
 
 public class NoteDisplayActivity extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 1;
