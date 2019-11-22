@@ -121,10 +121,10 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
     public int setAddToScore(){
         Avatar avatar= new Avatar();
         scorecount++;
-        int totalscore= avatar.getScore()+scorecount;
+        int totalscore= scorecount;
 
         avatar.setScore(totalscore);
-        System.out.println("score is" + totalscore);
+        System.out.println("score is: " + totalscore);
         return totalscore;
     }
 
