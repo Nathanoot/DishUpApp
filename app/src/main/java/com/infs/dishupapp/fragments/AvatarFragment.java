@@ -17,6 +17,8 @@ import com.infs.dishupapp.R;
 import com.infs.dishupapp.activities.RecipeDetailActivity;
 import com.infs.dishupapp.models.Score;
 
+import java.util.ArrayList;
+
 public class AvatarFragment extends Fragment {
     private TextView name;
     private ProgressBar progressBar;

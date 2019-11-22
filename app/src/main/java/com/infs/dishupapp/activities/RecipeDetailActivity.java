@@ -123,7 +123,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
         scorecount=0;
         scorecount++;
         int totalscore= scorecount;
-        s.setScore(totalscore);
+        s.setScore( totalscore );
         System.out.println("score is: " + totalscore);
         return totalscore;
     }
