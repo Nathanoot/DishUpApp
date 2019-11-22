@@ -32,6 +32,7 @@ public class AvatarFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_avatar, container, false);
         character= view.findViewById( R.id.imageAvatar);
         button = view.findViewById(R.id.buttonToCategory);
+        score=view.findViewById( R.id.score );
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +65,7 @@ public class AvatarFragment extends Fragment {
         progressBar.setMax(10);
         progressBar.setProgress(0);
         final RecipeDetailActivity rcp= new RecipeDetailActivity();
-  //      progressBar.setProgress( rcp.getClicks());
+        progressBar.setProgress( rcp.setAddToScore());
 
         //counting the scores
         //someone set the count scores in the recipe part

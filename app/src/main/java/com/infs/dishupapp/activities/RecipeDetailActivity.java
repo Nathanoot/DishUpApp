@@ -2,9 +2,11 @@ package com.infs.dishupapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,11 +20,10 @@ import com.google.gson.Gson;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class RecipeDetailActivity extends AppCompatActivity {
+public class RecipeDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mealName;
     private TextView mealCategory;
@@ -36,12 +37,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private TextView measureThree;
     private Button addToScore;
     public ImageView imageOne;
+    int scorecount;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
+        scorecount=0;
 
         mealName = findViewById(R.id.mealName);
         mealCategory = findViewById(R.id.mealCategory);
@@ -56,12 +59,15 @@ public class RecipeDetailActivity extends AppCompatActivity {
         addToScore= findViewById( R.id.addToScore );
         imageOne = findViewById(R.id.imageView);
 
-//        addToScore.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        addToScore.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setAddToScore();
+                Toast.makeText(getApplicationContext(),"Point has been added",Toast.LENGTH_LONG).show();
+
+            }
+        } );
+
 
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);
@@ -75,8 +81,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Gson gson = new Gson ();
                         Meals meals = gson.fromJson(response, Meals.class);
-                  //      Meals[] meals = gson.fromJson(response, Meals[].class);
-                 //       List<Meals.Recipe> abc = Arrays.asList(meals);
+
                         ArrayList<Recipe> recipay = meals.meals;
 
                         mealName.setText(recipay.get(0).getStrMeal());
@@ -93,7 +98,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
                         String imageUrl = recipay.get(0).getStrMealThumb();
                         ImageView imageOne = (ImageView) findViewById(R.id.imageView);
-                        Picasso.get().load(imageUrl).into(imageOne);
+//                        Picasso.get().load(imageUrl).into(imageOne);
 
 
 
@@ -105,23 +110,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 System.out.println("Error");
             }
 
-//           public void getClicks(){
-//               @Override
-//            addToScore.OnClickListene(new View.OnClickListener(){
-//                @Override
-//                        public void onClick(View view){
-//                    clickcount=clickcount+1;
-//                    if(clickcount==1){
-//                        Toast.makeText(getApplicationContext(),"Button clicked first time!", Toast.LENGTH_LONG).show();
-//                    }
-//                    else
-//                    {
-//                        Toast.makeText(getApplicationContext(),"Button clicked count is"+clickcount, Toast.LENGTH_LONG).show();
-//                    }
-//
-//                }
-//                });
-//           }
 
         });
 
@@ -129,8 +117,16 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
     }
+    public int setAddToScore(){
+        int currentscore=0;
+        int totalscore= currentscore+scorecount;
+        scorecount++;
 
+        return totalscore;
+    }
 
+    @Override
+    public void onClick(View v) {
 
-
+    }
 }
