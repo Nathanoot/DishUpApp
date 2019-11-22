@@ -67,7 +67,7 @@ public class AvatarFragment extends Fragment {
         progressBar.setMax(10);
         progressBar.setProgress(0);
         final RecipeDetailActivity rcp= new RecipeDetailActivity();
-        progressBar.setProgress( rcp.setAddToScore());
+
 
         //counting the scores
         //someone set the count scores in the recipe part
