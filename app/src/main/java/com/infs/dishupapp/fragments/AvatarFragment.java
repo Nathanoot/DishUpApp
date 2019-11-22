@@ -44,59 +44,21 @@ public class AvatarFragment extends Fragment {
             }
         });
 
+        // Load score
         SharedPreferences myScore = getActivity().getSharedPreferences("cookingScare", Context.MODE_PRIVATE);
         recipeScore = myScore.getInt("recipeScore", 0);
-        score.setText(String.valueOf(recipeScore));
-//        //Load score
-//        SharedPreferences myScore = getActivity().getSharedPreferences("cookingScorre", Context.MODE_PRIVATE);
-//        recipeScore = myScore.getInt("recipeScore", 0);
-//        score.setText(String.valueOf(recipeScore));
-//
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                Fragment fragment = new CategoryFragment();
-////                swapFragment(fragment);
-//
-//                recipeScore++;
-//
-//                // Save score
-//                SharedPreferences myScore = getActivity().getSharedPreferences("cookingScorre", Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = myScore.edit();
-//                editor.putInt("recipeScore", recipeScore);
-//                editor.commit();
-//
-//                score.setText(String.valueOf(recipeScore));
-//
-//
-//            }
-//        });
+
+        StringBuffer scoreString = new StringBuffer("Score:");
+        scoreString.append(recipeScore);
+
+        score.setText(scoreString);
+
 
         progressBar = view.findViewById(R.id.progressBar);
 
         progressBar.setProgress(recipeScore);
 
         setAvatar();
-//            if (recipeScore < 5) {
-//                character.setImageResource(R.drawable.baby);
-//            } else if (recipeScore < 10) {
-//                character.setImageResource(R.drawable.level2);
-//            } else if (recipeScore < 15) {
-//                character.setImageResource(R.drawable.boy);
-//            } else if (recipeScore < 20) {
-//                character.setImageResource(R.drawable.level4);
-//            } else {
-//                character.setImageResource(R.drawable.chef);
-//            }
-            //setting up the horizontal progress bar
-
-
-
-
-
-            //counting the scores
-            //someone set the count scores in the recipe part
-            //if button is clicked, then score++
         return view;
         }
 
@@ -123,6 +85,7 @@ public class AvatarFragment extends Fragment {
             progressBar.setMax(20);
         } else {
             character.setImageResource(R.drawable.chef);
+            progressBar.setMax(75);
         }
     }
 }
