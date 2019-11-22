@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".activities.RecipeDetailActivity">
         </activity>
+        <activity android:name=".activities.NoteDisplayActivity"></activity>
+        <activity android:name=".activities.AddNoteActivity"></activity>
     </application>
 
 </manifest>
