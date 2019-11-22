@@ -65,11 +65,12 @@ public class RecipeDetailActivity extends AppCompatActivity {
         imageOne = findViewById(R.id.imageView);
 
 
-
+//      Receive intent of the id that was clicked in the recyclerview
+//      Convert the intent into a string and add it to the end of the api to search
         Intent intent = getIntent();
         int idMeal = intent.getIntExtra("idMeal", 52772);
         String url2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal;
-
+//      Use volley to call the api with the specific ID retrieved from the intent
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
                 new Response.Listener<String>() {
@@ -78,7 +79,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Gson gson = new Gson ();
                         Meals meals = gson.fromJson(response, Meals.class);
-
+//       Set all the textviews to the corresponding values retrieved from the JSON
                         ArrayList<Recipe> recipay = meals.meals;
 
                         mealName.setText(recipay.get(0).getStrMeal());
@@ -114,9 +115,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
         //Load score
-//        SharedPreferences myScore = this.getSharedPreferences("cookingScorre", Context.MODE_PRIVATE);
-//        recipeScore = myScore.getInt("recipeScore", 0);
-//        score.setText(String.valueOf(recipeScore));
+
 
         addToScore.setOnClickListener(new View.OnClickListener() {
             @Override
