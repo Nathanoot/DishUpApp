@@ -13,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.fragments.AvatarFragment;
 import com.infs.dishupapp.fragments.CategoryFragment;
+import com.infs.dishupapp.fragments.NotesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
                     swapFragment(fragment);
                     setFragmentTitle("Recipes");
                     return true;
+                } else if (menuItem.getItemId() == R.id.nav_quiz) {
+                    Fragment fragment = new NotesFragment();
+                    swapFragment(fragment);
+                    setFragmentTitle("Notes");
                 }
                 return false;
             }
