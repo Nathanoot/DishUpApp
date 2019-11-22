@@ -19,19 +19,20 @@ public abstract class AppDataBase extends RoomDatabase {
     // create multiple instances of the db.
     private static AppDataBase instance;
 
-//    public abstract RecipeDao recipeDao();
+    //    public abstract RecipeDao recipeDao();
     public abstract NoteDao noteDao();
 
 
     // One thread at a time can access the singleton, so two instances of this db won't be created.
     // Returns a new instance of the db, and if version gets updated will delete the table and re-add
-    public static synchronized AppDataBase getInstance(Context context){
-        if(instance==null){
-            instance= Room.databaseBuilder(context.getApplicationContext(),
+    public static synchronized AppDataBase getInstance(Context context) {
+        if (instance == null) {
+            instance = Room.databaseBuilder(context.getApplicationContext(),
                     AppDataBase.class, "themealdb")
                     .fallbackToDestructiveMigration()
                     .addCallback(roomCallback)
-                    .build();;
+                    .build();
+            ;
         }
         return instance;
 
