@@ -62,10 +62,9 @@ public class AvatarFragment extends Fragment {
         //setting up the horizontal progress bar
         progressBar=view.findViewById( R.id.progressBar );
         score=view.findViewById( R.id.score );
-        progressBar.setMax(10);
-        progressBar.setProgress(0);
         final RecipeDetailActivity rcp= new RecipeDetailActivity();
-
+        progressBar.setMax(10);
+        progressBar.setProgress(rcp.setAddToScore());
 
 
         //counting the scores
