@@ -35,13 +35,11 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private TextView ingredientOne;
     private TextView ingredientTwo;
     private TextView ingredientThree;
-    private TextView ingredientFour;
     private TextView measureOne;
     private TextView measureTwo;
     private TextView measureThree;
     private Button addToScore;
     public ImageView imageOne;
-    int scorecount;
     public static int recipeScore;
 
 
@@ -49,7 +47,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
-        scorecount=0;
 
         mealName = findViewById(R.id.mealName);
         mealCategory = findViewById(R.id.mealCategory);
@@ -57,7 +54,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
         ingredientOne = findViewById(R.id.ingredientOne);
         ingredientTwo = findViewById(R.id.ingredientTwo);
         ingredientThree = findViewById(R.id.ingredientThree);
-        ingredientFour = findViewById(R.id.ingredientFour);
         measureOne = findViewById(R.id.measureOne);
         measureTwo = findViewById(R.id.measureTwo);
         measureThree = findViewById(R.id.measureThree);
@@ -88,14 +84,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
                         ingredientOne.setText(recipay.get(0).getStrIngredient1());
                         ingredientTwo.setText(recipay.get(0).getStrIngredient2());
                         ingredientThree.setText(recipay.get(0).getStrIngredient3());
-                        ingredientFour.setText(recipay.get(0).getStrIngredient4());
                         measureOne.setText(recipay.get(0).getStrMeasure1());
                         measureTwo.setText(recipay.get(0).getStrMeasure2());
                         measureThree.setText(recipay.get(0).getStrMeasure3());
 
 
                         String imageUrl = recipay.get(0).getStrMealThumb();
-                        ImageView imageOne = (ImageView) findViewById(R.id.imageView);
+                        ImageView imageOne = findViewById(R.id.imageView);
                         Picasso.get().load(imageUrl).into(imageOne);
 
 

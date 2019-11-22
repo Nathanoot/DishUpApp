@@ -32,7 +32,6 @@ public abstract class AppDataBase extends RoomDatabase {
                     .fallbackToDestructiveMigration()
                     .addCallback(roomCallback)
                     .build();
-            ;
         }
         return instance;
 
