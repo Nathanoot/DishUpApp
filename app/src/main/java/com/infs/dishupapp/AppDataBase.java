@@ -15,6 +15,7 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.infs.dishupapp.interfaces.NoteDao;
+import com.infs.dishupapp.interfaces.ScoreDao;
 import com.infs.dishupapp.models.Note;
 import com.infs.dishupapp.models.Recipe;
 
@@ -25,6 +26,7 @@ public abstract class AppDataBase extends RoomDatabase {
     private static AppDataBase instance;
 
     public abstract NoteDao noteDao();
+    public abstract ScoreDao scoreDao();
 
 //    public abstract AvatarDao avatarDao();
 //    public abstract RecipeDao recipeDao();

@@ -28,6 +28,6 @@ public interface NoteDao {
 
     // With LiveData can observe the object, when there's changes in note_table, the List<Note>
     // will be automatically updated with room library.
-    @Query("SELECT * FROM note_table ORDER BY priority DESC")
+    @Query("SELECT * FROM note_table ORDER BY priority ASC")
     LiveData<List<Note>> getAllNotes();
 }

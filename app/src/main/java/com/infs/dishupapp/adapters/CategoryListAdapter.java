@@ -45,7 +45,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         holder.nameTextView.setText(categoryItemAtPosition.getStrMeal());
 
         String imageUrl = categoryItemAtPosition.getStrMealThumb();
-       // Picasso.get().load(imageUrl).into(imageView2);
+//        Picasso.get().load(imageUrl).into(imageView2);
         Picasso.get().load(imageUrl).into(holder.imageView2);
 
         holder.view.setOnClickListener(new View.OnClickListener() {

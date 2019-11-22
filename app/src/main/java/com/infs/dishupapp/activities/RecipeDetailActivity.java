@@ -21,6 +21,7 @@ import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Avatar;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,6 +39,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
     private TextView measureThree;
     private Button addToScore;
     public ImageView imageOne;
+    private TextView potentialPoints;
     int scorecount;
 
 
@@ -59,6 +61,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
         measureThree = findViewById(R.id.measureThree);
         addToScore= findViewById( R.id.addToScore );
         imageOne = findViewById(R.id.imageView);
+        potentialPoints = findViewById(R.id.textViewPoints);
 
         addToScore.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -98,9 +101,8 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
 
 
                         String imageUrl = recipay.get(0).getStrMealThumb();
-                        ImageView imageOne = (ImageView) findViewById(R.id.imageView);
-//                        Picasso.get().load(imageUrl).into(imageOne);
-
+                        ImageView imageOne = findViewById(R.id.imageView);
+                        Picasso.get().load(imageUrl).into(imageOne);
 
 
                     }
@@ -116,6 +118,8 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
 
         queue.add(stringRequest);
 
+
+        potentialPoints.setText(String.valueOf(1));
 
     }
     public int setAddToScore(){

@@ -61,7 +61,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
         // If the title and description has just spaces or no text, show the toast message.
         if (title.trim().isEmpty() || description.trim().isEmpty()) {
-            Toast.makeText(this, "Please insert a title and description", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in the title and description", Toast.LENGTH_SHORT).show();
             return;
         }
 

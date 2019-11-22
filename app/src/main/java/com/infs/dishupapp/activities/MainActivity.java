@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     swapFragment(fragment);
                     setFragmentTitle("Recipes");
                     return true;
-                } else if (menuItem.getItemId() == R.id.nav_quiz) {
+                } else if (menuItem.getItemId() == R.id.nav_notes) {
                     Fragment fragment = new NotesFragment();
                     swapFragment(fragment);
                     setFragmentTitle("Notes");
