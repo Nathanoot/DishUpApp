@@ -38,9 +38,9 @@ public class RecipeListFragment extends Fragment {
     LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
         final CategoryListAdapter categoryListAdapter = new CategoryListAdapter();
-
+//      Receive the bundle containing the category string to add it onto the api to search
         String value = getArguments().getString("category");
-
+//      Call the api with the specific category ID retrieved from the bundle
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url2 = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + value;
 

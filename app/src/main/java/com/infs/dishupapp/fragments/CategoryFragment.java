@@ -44,7 +44,8 @@ public class CategoryFragment extends Fragment {
         vegetarianButton = view.findViewById(R.id.imageVegetarian);
         final RecipeListFragment recipe = new RecipeListFragment();
         Toast.makeText(getActivity(), "Choose your Category", Toast.LENGTH_LONG).show();
-
+//      All buttons send a category value through a bundle to the RecipeList Fragment
+//      Upon clicking any of the buttons, swap to the RecipeListFragment
         beefButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

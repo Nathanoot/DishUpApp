@@ -52,7 +52,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             @Override
             public void onClick(View view) {
                 Context context = view.getContext();
-
+//              Send intent with the id that was clicked on in the view
                 Intent intent = new Intent(context, RecipeDetailActivity.class);
                 intent.putExtra("idMeal", categoryItemAtPosition.getIdMeal());
                 context.startActivity(intent);
