@@ -45,7 +45,7 @@ public class AvatarFragment extends Fragment {
         });
 
         // Load score
-        SharedPreferences myScore = getActivity().getSharedPreferences("cookingScare", Context.MODE_PRIVATE);
+        SharedPreferences myScore = getActivity().getSharedPreferences("cookingPoints", Context.MODE_PRIVATE);
         recipeScore = myScore.getInt("recipeScore", 0);
 
         StringBuffer scoreString = new StringBuffer("Score:");

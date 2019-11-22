@@ -57,9 +57,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
         measureOne = findViewById(R.id.measureOne);
         measureTwo = findViewById(R.id.measureTwo);
         measureThree = findViewById(R.id.measureThree);
-        addToScore= findViewById( R.id.addToScore );
+        addToScore = findViewById(R.id.addToScore);
         imageOne = findViewById(R.id.imageView);
-
 
 //      Receive intent of the id that was clicked in the recyclerview
 //      Convert the intent into a string and add it to the end of the api to search
@@ -73,7 +72,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(String response) {
-                        Gson gson = new Gson ();
+                        Gson gson = new Gson();
                         Meals meals = gson.fromJson(response, Meals.class);
 //       Set all the textviews to the corresponding values retrieved from the JSON
                         ArrayList<Recipe> recipay = meals.meals;
@@ -92,7 +91,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
                         String imageUrl = recipay.get(0).getStrMealThumb();
                         ImageView imageOne = findViewById(R.id.imageView);
                         Picasso.get().load(imageUrl).into(imageOne);
-
 
 
                     }
@@ -119,15 +117,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 recipeScore++;
 
                 // Save score
-                SharedPreferences myScore = getSharedPreferences("cookingScare", Context.MODE_PRIVATE);
+                SharedPreferences myScore = getSharedPreferences("cookingPoints", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = myScore.edit();
                 editor.putInt("recipeScore", recipeScore);
                 editor.commit();
 
-                Toast.makeText(getApplicationContext(),"Congratulations a point has been added",Toast.LENGTH_LONG).show();
-//                score.setText(String.valueOf(recipeScore));
+                Toast.makeText(getApplicationContext(), "Congratulations a point has been added", Toast.LENGTH_LONG).show();
 
-//                addToScore.setEnabled(false);
             }
         });
 
