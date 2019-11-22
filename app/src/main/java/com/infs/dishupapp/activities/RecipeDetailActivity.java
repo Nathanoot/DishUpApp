@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
-import com.infs.dishupapp.models.Score;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

@@ -16,10 +16,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.infs.dishupapp.R;
-import com.infs.dishupapp.activities.RecipeDetailActivity;
-import com.infs.dishupapp.models.Score;
-
-import java.util.ArrayList;
 
 public class AvatarFragment extends Fragment {
     private ProgressBar progressBar;
