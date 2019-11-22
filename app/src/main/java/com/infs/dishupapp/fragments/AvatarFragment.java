@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.infs.dishupapp.R;
 import com.infs.dishupapp.activities.RecipeDetailActivity;
-import com.infs.dishupapp.models.Avatar;
+import com.infs.dishupapp.models.Score;
 
 public class AvatarFragment extends Fragment {
     private TextView name;
@@ -43,17 +43,17 @@ public class AvatarFragment extends Fragment {
             }
         });
         //setting up scoring system
-        final Avatar avatar= new Avatar();
-        if(avatar.getScore()<2){
+        final Score s= new Score();
+        if(s.getScore()<2){
             character.setImageResource(R.drawable.baby);
         }
-        else if(avatar.getScore()<4) {
+        else if(s.getScore()<4) {
             character.setImageResource( R.drawable.level2 );
         }
-        else if(avatar.getScore()<6) {
+        else if(s.getScore()<6) {
             character.setImageResource( R.drawable.boy );
         }
-        else if(avatar.getScore()<8){
+        else if(s.getScore()<8){
             character.setImageResource( R.drawable.level4);
         }
         else {
@@ -65,6 +65,7 @@ public class AvatarFragment extends Fragment {
         progressBar.setMax(10);
         progressBar.setProgress(0);
         final RecipeDetailActivity rcp= new RecipeDetailActivity();
+
 
 
         //counting the scores

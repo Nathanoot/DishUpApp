@@ -1,7 +1,5 @@
 package com.infs.dishupapp.models;
 
-import android.widget.ImageView;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity
@@ -9,8 +7,7 @@ public class Avatar {
 
     @PrimaryKey
     private String name;
-    private int score = 0;
-    private ImageView character;
+    private int score;
 
     public String getName() {
         return name;
@@ -23,10 +20,5 @@ public class Avatar {
     public int getScore() {
         return score;
     }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
 }
 

@@ -18,9 +18,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.infs.dishupapp.R;
-import com.infs.dishupapp.models.Avatar;
 import com.infs.dishupapp.models.Meals;
 import com.infs.dishupapp.models.Recipe;
+import com.infs.dishupapp.models.Score;
 
 import java.util.ArrayList;
 
@@ -119,11 +119,11 @@ public class RecipeDetailActivity extends AppCompatActivity implements View.OnCl
 
     }
     public int setAddToScore(){
-        Avatar avatar= new Avatar();
+        Score s= new Score();
+        scorecount=0;
         scorecount++;
         int totalscore= scorecount;
-
-        avatar.setScore(totalscore);
+        s.setScore(totalscore);
         System.out.println("score is: " + totalscore);
         return totalscore;
     }

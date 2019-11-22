@@ -1,6 +1,12 @@
 package com.infs.dishupapp.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Recipe {
+
+    @PrimaryKey
     private int idMeal;
 
     private String strMeal;
@@ -20,7 +26,6 @@ public class Recipe {
     private String strIngredient7;
     private String strIngredient8;
 
-    //There are 20 different measures
     private String strMeasure1;
     private String strMeasure2;
     private String strMeasure3;
